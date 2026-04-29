@@ -4,7 +4,6 @@ import type { ComponentProps, JSX } from "solid-js"
 import { Show, createSignal, onCleanup, onMount } from "solid-js"
 import { Portal } from "solid-js/web"
 import { useI18n } from "../context/i18n"
-import { Icon } from "./icon"
 import { ButtonV2 } from "./button-v2"
 import "./toast-v2.css"
 
@@ -162,29 +161,4 @@ export interface ToastV2PromiseOptions<T, U = unknown> {
   loading?: JSX.Element
   success?: (data: T) => JSX.Element
   error?: (error: U) => JSX.Element
-}
-
-export function showPromiseToastV2<T, U = unknown>(
-  promise: Promise<T> | (() => Promise<T>),
-  options: ToastV2PromiseOptions<T, U>,
-) {
-  return toaster.promise(promise, (props) => (
-    <ToastV2 toastId={props.toastId}>
-      <div data-slot="toast-v2-header">
-        <Show when={props.state === "pending" || props.state === "fulfilled" || props.state === "rejected"}>
-          <ToastV2.Icon>
-            <Icon name={props.state === "pending" ? "help" : props.state === "fulfilled" ? "check" : "circle-x"} />
-          </ToastV2.Icon>
-        </Show>
-        <ToastV2.Content>
-          <ToastV2.Description>
-            {props.state === "pending" && options.loading}
-            {props.state === "fulfilled" && options.success?.(props.data!)}
-            {props.state === "rejected" && options.error?.(props.error)}
-          </ToastV2.Description>
-        </ToastV2.Content>
-        <ToastV2.CloseButton />
-      </div>
-    </ToastV2>
-  ))
 }

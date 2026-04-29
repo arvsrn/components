@@ -1,6 +1,5 @@
 // @ts-nocheck
 import { ButtonV2 } from "./button-v2";
-import { Icon } from "./icon";
 
 const docs = `### Overview
 Button v2 with four visual variants and two sizes.

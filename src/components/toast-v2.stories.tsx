@@ -1,7 +1,6 @@
 // @ts-nocheck
 import * as mod from "./toast-v2";
 import { ButtonV2 } from "./button-v2";
-import { Icon } from "./icon";
 
 const docs = `### Overview
 Toast notifications with optional icons, actions, and progress.
