@@ -105,7 +105,7 @@ function TabsV2Trigger(props: ParentProps<TabsV2TriggerProps>) {
           data-hidden={split.hideCloseButton}
           onClick={split.closeButtonCallback}
         >
-          <button type="button" aria-label="Close tab" class="size-5 flex-none flex items-center justify-center -ml-[5px] text-[#808080] hover:text-[#666666]">
+          <button type="button" aria-label="Close tab" data-slot="tabs-v2-close-button">
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M10.8889 3.11108L3.11108 10.8889" stroke="currentColor" stroke-linejoin="round" />
               <path d="M3.11108 3.11108L10.8889 10.8889" stroke="currentColor" stroke-linejoin="round" />

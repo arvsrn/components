@@ -73,6 +73,22 @@
   justify-content: center;
 }
 
+[data-component="tabs-v2"] [data-slot="tabs-v2-close-button"] {
+  width: 20px;
+  height: 20px;
+  margin-left: -5px;
+  margin-top: -1px;
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #808080;
+}
+
+[data-component="tabs-v2"] [data-slot="tabs-v2-close-button"]:hover {
+  color: #666666;
+}
+
 [data-component="tabs-v2"] [data-component="icon-button"] {
   margin: 0;
 }
