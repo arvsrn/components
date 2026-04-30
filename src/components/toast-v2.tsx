@@ -3,7 +3,6 @@ import type { ToastRootProps, ToastCloseButtonProps, ToastTitleProps, ToastDescr
 import type { ComponentProps, JSX } from "solid-js"
 import { Show, createSignal, onCleanup, onMount } from "solid-js"
 import { Portal } from "solid-js/web"
-import { useI18n } from "../context/i18n"
 import { ButtonV2 } from "./button-v2"
 import "./toast-v2.css"
 
@@ -76,11 +75,10 @@ function ToastV2Actions(props: ComponentProps<"div">) {
 }
 
 function ToastV2CloseButton(props: ToastCloseButtonProps & ComponentProps<"button">) {
-  const i18n = useI18n()
   return (
     <Kobalte.CloseButton
       data-slot="toast-v2-close-button"
-      aria-label={i18n.t("ui.common.dismiss")}
+      aria-label="Dismiss"
       {...props}
     >
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
