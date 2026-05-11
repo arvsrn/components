@@ -1,5 +1,6 @@
 import { Show } from "solid-js"
 import * as mod from "./tabs-v2"
+import type { TabsV2Props } from "./tabs-v2"
 
 const docs = `
 Tabbed navigation for switching between related panels. Compose \`TabsV2.List\` + \`TabsV2.Trigger\` + \`TabsV2.Content\`.
@@ -40,7 +41,7 @@ export const Settings = {
     orientation: "vertical",
     defaultValue: "general",
   },
-  render: (props) => (
+  render: (props: TabsV2Props) => (
     <mod.TabsV2 {...props}>
       <mod.TabsV2.List>
         <mod.TabsV2.Trigger value="general">
@@ -94,7 +95,7 @@ export const Normal = {
     orientation: "horizontal",
     defaultValue: "first",
   },
-  render: (props) => (
+  render: (props: TabsV2Props) => (
     <mod.TabsV2 {...props}>
       <mod.TabsV2.List>
         <mod.TabsV2.Trigger value="first">First</mod.TabsV2.Trigger>
@@ -116,7 +117,7 @@ export const Pill = {
     orientation: "horizontal",
     defaultValue: "first",
   },
-  render: (props) => (
+  render: (props: TabsV2Props) => (
     <mod.TabsV2 {...props}>
       <mod.TabsV2.List>
         <mod.TabsV2.Trigger value="first">First</mod.TabsV2.Trigger>
@@ -145,7 +146,7 @@ export const Closable = {
     orientation: "horizontal",
     defaultValue: "tab-1",
   },
-  render: (props) => (
+  render: (props: TabsV2Props) => (
     <mod.TabsV2 {...props}>
       <mod.TabsV2.List>
         <mod.TabsV2.Trigger value="tab-1">

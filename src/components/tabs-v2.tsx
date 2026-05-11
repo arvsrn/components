@@ -95,6 +95,7 @@ function TabsV2CloseButton(props: TabsV2CloseButtonProps) {
       tabindex={0}
       aria-label="Close tab"
       data-slot="tabs-v2-close-button"
+      {...rest}
       classList={{
         [split.class ?? ""]: !!split.class,
         ...split.classList,
@@ -102,13 +103,14 @@ function TabsV2CloseButton(props: TabsV2CloseButtonProps) {
       onClick={(e) => {
         e.preventDefault()
         e.stopPropagation()
-        split.onClick?.(e)
+        if (typeof split.onClick === "function") {
+          split.onClick(e)
+        }
       }}
       onMouseDown={(e) => {
         e.preventDefault()
         e.stopPropagation()
       }}
-      {...rest}
     >
       <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M10.8889 3.11108L3.11108 10.8889" stroke="currentColor" stroke-linejoin="round" />
