@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { ButtonV2 } from "./button-v2";
 
 const docs = `### Overview
@@ -7,7 +6,7 @@ Button v2 with four visual variants and two sizes.
 ### API
 - \`variant\`: "neutral" | "contrast" | "ghost" | "notify-highlight".
 - \`size\`: "normal" | "large".
-- \`leadingIcon\`: Optional leading icon instance.
+- \`icon\`: Optional icon name.
 - Inherits Kobalte Button props and native button attributes.
 
 ### States
@@ -35,6 +34,9 @@ export default {
     size: "normal",
   },
   argTypes: {
+    icon: {
+      control: "text",
+    },
     variant: {
       control: "select",
       options: ["neutral", "contrast", "ghost", "notify-highlight"],
@@ -89,7 +91,7 @@ export const Sizes = {
   ),
 };
 
-export const LeadingIcon = {
+export const Icon = {
   render: () => (
     <div
       style={{
@@ -102,52 +104,14 @@ export const LeadingIcon = {
       <ButtonV2
         variant="neutral"
         size="normal"
-        leadingIcon={
-          <svg
-            width="16"
-            height="16"
-            viewBox="0 0 16 16"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M8 2.88867V13.1109"
-              stroke="currentColor"
-              stroke-linejoin="round"
-            />
-            <path
-              d="M2.88867 8H13.1109"
-              stroke="currentColor"
-              stroke-linejoin="round"
-            />
-          </svg>
-        }
+        icon="plus"
       >
         Normal
       </ButtonV2>
       <ButtonV2
         variant="contrast"
         size="large"
-        leadingIcon={
-          <svg
-            width="16"
-            height="16"
-            viewBox="0 0 16 16"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M8 2.88867V13.1109"
-              stroke="currentColor"
-              stroke-linejoin="round"
-            />
-            <path
-              d="M2.88867 8H13.1109"
-              stroke="currentColor"
-              stroke-linejoin="round"
-            />
-          </svg>
-        }
+        icon="plus"
       >
         Large
       </ButtonV2>

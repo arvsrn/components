@@ -1,0 +1,28 @@
+[data-component="tag"] {
+  box-sizing: border-box;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  height: 16px;
+  padding: 0 4px;
+  user-select: none;
+
+  border-radius: 2px;
+  border: 0.5px solid rgba(0, 0, 0, 0.1);
+  background: #eeeeee;
+
+  font-family: var(--font-family-sans);
+  font-style: normal;
+  font-weight: 530;
+  font-size: 11px;
+  line-height: 1;
+  letter-spacing: 0.05px;
+  color: #5c5c5c;
+  font-variant-numeric: tabular-nums;
+}
+
+[data-component="tag"][data-high-contrast] {
+  border-color: rgba(0, 0, 0, 0.2);
+}

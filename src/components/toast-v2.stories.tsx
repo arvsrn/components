@@ -1,4 +1,3 @@
-// @ts-nocheck
 import * as mod from "./toast-v2";
 import { ButtonV2 } from "./button-v2";
 
@@ -54,7 +53,7 @@ export const AllExamples = {
           mod.showToastV2({
             title: "Download started...",
             description: "23% · 2 min left",
-            icon: () => (
+            icon: (
               <svg
                 width="16"
                 height="16"
@@ -93,7 +92,7 @@ export const AllExamples = {
           mod.showToastV2({
             title: "Saved",
             description: "Your changes are stored",
-            icon: () => (
+            icon: (
               <svg
                 width="16"
                 height="16"
@@ -122,7 +121,7 @@ export const AllExamples = {
         onClick={() =>
           mod.showToastV2({
             title: "Saving...",
-            icon: () => (
+            icon: (
               <svg
                 width="16"
                 height="16"
@@ -181,7 +180,7 @@ export const AllExamples = {
           mod.showToastV2({
             title: "Unsaved changes",
             description: "You have made 4 edits...",
-            icon: () => (
+            icon: (
               <svg
                 width="16"
                 height="16"

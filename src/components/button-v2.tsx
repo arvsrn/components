@@ -1,5 +1,6 @@
 import { Button as Kobalte } from "@kobalte/core/button"
-import { type ComponentProps, Show, splitProps, type JSX } from "solid-js"
+import { type ComponentProps, Show, createMemo, splitProps } from "solid-js"
+import { Icon, type IconProps } from "./icon"
 import "./button-v2.css"
 
 export interface ButtonV2Props
@@ -7,25 +8,26 @@ export interface ButtonV2Props
     Pick<ComponentProps<"button">, "class" | "classList" | "children"> {
   size?: "small" | "normal" | "large"
   variant?: "neutral" | "contrast" | "ghost" | "notify-highlight"
-  leadingIcon?: JSX.Element
+  icon?: IconProps["name"]
 }
 
 export function ButtonV2(props: ButtonV2Props) {
-  const [split, rest] = splitProps(props, ["variant", "size", "leadingIcon", "class", "classList"])
+  const [split, rest] = splitProps(props, ["variant", "size", "icon", "class", "classList"])
+  const resolvedIcon = createMemo(() => split.icon)
   return (
     <Kobalte
       {...rest}
       data-component="button-v2"
       data-size={split.size || "normal"}
       data-variant={split.variant || "neutral"}
-      data-leading-icon={split.leadingIcon ? true : undefined}
+      data-icon={resolvedIcon()}
       classList={{
         ...split.classList,
         [split.class ?? ""]: !!split.class,
       }}
     >
-      <Show when={split.leadingIcon}>
-        {(leadingIcon) => <span data-slot="button-v2-leading-icon">{leadingIcon()}</span>}
+      <Show when={resolvedIcon()}>
+        <Icon name={resolvedIcon()!} size="small" />
       </Show>
       {props.children}
     </Kobalte>

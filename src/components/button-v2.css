@@ -50,25 +50,20 @@
   padding: 0 15px;
 }
 
-[data-component="button-v2"][data-leading-icon][data-size="small"] {
+[data-component="button-v2"][data-icon][data-size="small"] {
   padding-left: 9px;
 }
 
-[data-component="button-v2"][data-leading-icon][data-size="normal"] {
+[data-component="button-v2"][data-icon][data-size="normal"] {
   padding-left: 11px;
 }
 
-[data-component="button-v2"][data-leading-icon][data-size="large"] {
+[data-component="button-v2"][data-icon][data-size="large"] {
   padding-left: 15px;
 }
 
 [data-component="button-v2"] [data-slot="icon-svg"] {
   color: currentColor;
-}
-
-[data-component="button-v2"] [data-slot="button-v2-leading-icon"] {
-  display: inline-flex;
-  margin-left: -3px;
 }
 
 /* Neutral */

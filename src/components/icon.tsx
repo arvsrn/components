@@ -1,59 +1,29 @@
-import type { JSX } from 'solid-js';
+import { type ComponentProps, splitProps } from "solid-js"
 
-type IconName =
-  | 'plus'
-  | 'circle-check'
-  | 'warning'
-  | 'arrow-down-to-line'
-  | 'dot-grid'
-  | 'help'
-  | 'check'
-  | 'circle-x';
-
-interface IconProps {
-  name: IconName;
-  size?: 'small' | 'normal';
+export interface IconProps extends ComponentProps<"svg"> {
+  name: string
+  size?: "small" | "normal" | "large"
 }
 
-function glyphFor(name: IconName): string {
-  switch (name) {
-    case 'plus':
-      return '+';
-    case 'circle-check':
-    case 'check':
-      return '✓';
-    case 'warning':
-      return '!';
-    case 'arrow-down-to-line':
-      return '↓';
-    case 'dot-grid':
-      return '⋯';
-    case 'help':
-      return '?';
-    case 'circle-x':
-      return '×';
-    default:
-      return '•';
-  }
-}
-
-export function Icon(props: IconProps): JSX.Element {
-  const pixelSize = props.size === 'small' ? 14 : 16;
+/**
+ * Placeholder icon component
+ */
+export function Icon(props: IconProps) {
+  const [split, rest] = splitProps(props, ["name", "size"])
+  const pixelSize = split.size === "small" ? 14 : split.size === "large" ? 20 : 16
   return (
-    <span
-      aria-hidden="true"
-      style={{
-        display: 'inline-flex',
-        width: `${pixelSize}px`,
-        height: `${pixelSize}px`,
-        'align-items': 'center',
-        'justify-content': 'center',
-        'font-size': `${pixelSize - 2}px`,
-        'line-height': '1',
-        'font-weight': '600',
-      }}
+    <svg
+      {...rest}
+      data-slot="icon-svg"
+      width={pixelSize}
+      height={pixelSize}
+      viewBox="0 0 16 16"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden={rest["aria-hidden"] ?? "true"}
     >
-      {glyphFor(props.name)}
-    </span>
-  );
+      <path d="M8 2.88867V13.1109" stroke="currentColor" stroke-linejoin="round" />
+      <path d="M2.88867 8H13.1109" stroke="currentColor" stroke-linejoin="round" />
+    </svg>
+  )
 }

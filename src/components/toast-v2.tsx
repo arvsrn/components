@@ -1,37 +1,20 @@
 import { Toast as Kobalte, toaster } from "@kobalte/core/toast"
 import type { ToastRootProps, ToastCloseButtonProps, ToastTitleProps, ToastDescriptionProps } from "@kobalte/core/toast"
 import type { ComponentProps, JSX } from "solid-js"
-import { Show, createSignal, onCleanup, onMount } from "solid-js"
+import { Show, children } from "solid-js"
 import { Portal } from "solid-js/web"
 import { ButtonV2 } from "./button-v2"
 import "./toast-v2.css"
 
 export interface ToastV2RegionProps extends ComponentProps<typeof Kobalte.Region> {}
 
-let activeToastRegionCount = 0
-
 function ToastV2Region(props: ToastV2RegionProps) {
-  const [isActiveRegion, setIsActiveRegion] = createSignal(false)
-
-  onMount(() => {
-    if (activeToastRegionCount === 0) {
-      setIsActiveRegion(true)
-    }
-    activeToastRegionCount += 1
-  })
-
-  onCleanup(() => {
-    activeToastRegionCount = Math.max(0, activeToastRegionCount - 1)
-  })
-
   return (
-    <Show when={isActiveRegion()}>
-      <Portal>
-        <Kobalte.Region data-component="toast-v2-region" {...props}>
-          <Kobalte.List data-slot="toast-v2-list" />
-        </Kobalte.Region>
-      </Portal>
-    </Show>
+    <Portal>
+      <Kobalte.Region data-component="toast-v2-region" {...props}>
+        <Kobalte.List data-slot="toast-v2-list" />
+      </Kobalte.Region>
+    </Portal>
   )
 }
 
@@ -110,7 +93,7 @@ export interface ToastV2Action {
 export interface ToastV2Options {
   title?: string
   description?: string
-  icon?: JSX.Element | (() => JSX.Element)
+  icon?: JSX.Element
   duration?: number
   persistent?: boolean
   actions?: ToastV2Action[]
@@ -118,10 +101,13 @@ export interface ToastV2Options {
 
 export function showToastV2(options: ToastV2Options | string) {
   const opts = typeof options === "string" ? { description: options } : options
+  const resolvedIcon = children(() => opts.icon)
   return toaster.show((props) => (
     <ToastV2 toastId={props.toastId} duration={opts.duration} persistent={opts.persistent}>
       <div data-slot="toast-v2-header">
-        {opts.icon ? <ToastV2.Icon>{typeof opts.icon === "function" ? opts.icon() : opts.icon}</ToastV2.Icon> : null}
+        <Show when={resolvedIcon()}>
+          <ToastV2.Icon>{resolvedIcon()}</ToastV2.Icon>
+        </Show>
         <ToastV2.Content>
           <Show when={opts.title}>
             <ToastV2.Title>{opts.title}</ToastV2.Title>

@@ -1,5 +1,4 @@
-// @ts-nocheck
-import { createSignal } from "solid-js"
+import { Show } from "solid-js"
 import * as mod from "./tabs-v2"
 
 const docs = `
@@ -122,8 +121,9 @@ export const Pill = {
       <mod.TabsV2.List>
         <mod.TabsV2.Trigger value="first">First</mod.TabsV2.Trigger>
         <mod.TabsV2.Trigger value="second">Second</mod.TabsV2.Trigger>
-        <mod.TabsV2.Trigger value="third" closeButton closeButtonCallback={() => console.log("Close tab-3")}>
+        <mod.TabsV2.Trigger value="third">
           Closable
+          <mod.TabsV2.CloseButton onClick={() => console.log("Close tab-3")} />
         </mod.TabsV2.Trigger>
       </mod.TabsV2.List>
       <mod.TabsV2.Content value="first">
@@ -148,8 +148,11 @@ export const Closable = {
   render: (props) => (
     <mod.TabsV2 {...props}>
       <mod.TabsV2.List>
-        <mod.TabsV2.Trigger value="tab-1" closeButton closeButtonCallback={() => console.log("Close tab-1")}>
+        <mod.TabsV2.Trigger value="tab-1">
           Tab 1
+          <Show when={true}>
+            <mod.TabsV2.CloseButton onClick={() => console.log("Close tab-1")} />
+          </Show>
         </mod.TabsV2.Trigger>
         <mod.TabsV2.Trigger value="tab-2">Tab 2</mod.TabsV2.Trigger>
       </mod.TabsV2.List>

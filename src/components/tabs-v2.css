@@ -67,12 +67,6 @@
   box-shadow: none;
 }
 
-[data-component="tabs-v2"] [data-slot="tabs-v2-trigger-close-button"] {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 [data-component="tabs-v2"] [data-slot="tabs-v2-close-button"] {
   width: 20px;
   height: 20px;
