@@ -1,0 +1,51 @@
+import{n as e}from"./chunk-DnJy8xQt.js";import{G as t,H as n,J as r,K as i,Q as a,U as o,W as s,X as c,at as l,ct as u,dt as ee,et as d,ft as f,it as p,lt as m,mt as h,nt as g,rt as _,st as v,tt as y,ut as b}from"./iframe-Ck-CNuiI.js";import{D as te,E as ne,S as x,T as re,h as S,i as ie,k as C,n as w,r as T,s as ae,t as oe,u as se}from"./5WXHJDCZ-BYY-28qQ.js";import{a as ce,o as le}from"./icon-DVAdbc6B.js";import{n as E,t as ue}from"./button-v2-B9yf6A8I.js";import{i as de,n as fe}from"./FN6EICGO-DSQ6oNSQ.js";import{n as pe,t as me}from"./JNCCF6MP-uke4Ej5Y.js";import{n as he,t as ge}from"./dist-CSut9X2X.js";function _e(e={}){let[t,n]=fe({value:()=>C(e.open),defaultValue:()=>!!C(e.defaultOpen),onChange:t=>e.onOpenChange?.(t)}),r=()=>{n(!0)},i=()=>{n(!1)};return{isOpen:t,setIsOpen:n,open:r,close:i,toggle:()=>{t()?i():r()}}}var ve=e((()=>{de(),S()}));function D(){let e=h(M);if(e===void 0)throw Error("[kobalte]: `useCollapsibleContext` must be used within a `Collapsible.Root` component");return e}function O(e){let[t,n]=p(),r=D(),[i,o]=f(x({id:r.generateId(`content`)},e),[`ref`,`id`,`style`]),{present:s}=he({show:r.shouldMount,element:()=>t()??null}),[l,d]=p(0),[h,g]=p(0),_=r.isOpen()||s();return ee(()=>{let e=requestAnimationFrame(()=>{_=!1});b(()=>{cancelAnimationFrame(e)})}),y(m(s,()=>{if(!t())return;t().style.transitionDuration=`0s`,t().style.animationName=`none`;let e=t().getBoundingClientRect();d(e.height),g(e.width),_||(t().style.transitionDuration=``,t().style.animationName=``)})),y(m(r.isOpen,e=>{!e&&t()&&(t().style.transitionDuration=``,t().style.animationName=``)},{defer:!0})),y(()=>b(r.registerContentId(i.id))),a(c,{get when(){return s()},get children(){return a(T,u({as:`div`,ref(e){var t=re(n,i.ref);typeof t==`function`&&t(e)},get id(){return i.id},get style(){return te({"--kb-collapsible-content-height":l()?`${l()}px`:void 0,"--kb-collapsible-content-width":h()?`${h()}px`:void 0},i.style)}},()=>r.dataset(),o))}})}function k(e){let[t,n]=f(x({id:`collapsible-${l()}`},e),[`open`,`defaultOpen`,`onOpenChange`,`disabled`,`forceMount`]),[r,i]=p(),o=_e({open:()=>t.open,defaultOpen:()=>t.defaultOpen,onOpenChange:e=>t.onOpenChange?.(e)}),s=g(()=>({"data-expanded":o.isOpen()?``:void 0,"data-closed":o.isOpen()?void 0:``,"data-disabled":t.disabled?``:void 0})),c={dataset:s,isOpen:o.isOpen,disabled:()=>t.disabled??!1,shouldMount:()=>t.forceMount||o.isOpen(),contentId:r,toggle:o.toggle,generateId:se(()=>n.id),registerContentId:me(i)};return a(M.Provider,{value:c,get children(){return a(T,u({as:`div`},s,n))}})}function A(e){let n=D(),[r,i]=f(e,[`onClick`]);return a(ce,u({get"aria-expanded"(){return n.isOpen()},get"aria-controls"(){return t(()=>!!n.isOpen())()?n.contentId():void 0},get disabled(){return n.disabled()},onClick:e=>{ae(e,r.onClick),n.toggle()}},()=>n.dataset(),i))}var j,M,N,P=e((()=>{o(),ve(),le(),pe(),ie(),w(),S(),v(),ne(),ge(),j={},oe(j,{Collapsible:()=>N,Content:()=>O,Root:()=>k,Trigger:()=>A,useCollapsibleContext:()=>D}),M=d(),N=Object.assign(k,{Content:O,Trigger:A})})),ye=e((()=>{P()})),be=e((()=>{}));function xe(){return I()}function Se(){return(()=>{var e=L();return e.firstChild.firstChild.nextSibling,e})()}function Ce(){return R()}function F(e){let[t,n]=f(e,[`title`,`subtitle`,`suffix`,`loading`,`open`,`defaultOpen`,`onOpenChange`,`subtitleHref`,`class`,`classList`]),r=g(()=>{let e=t.suffix;return e==null?!1:typeof e==`string`?e.length>0:!0});return a(N,u(n,{"data-component":`tool-error-card`,get open(){return t.open},get defaultOpen(){return t.defaultOpen},get onOpenChange(){return t.onOpenChange},get disabled(){return!r()},get"aria-busy"(){return t.loading?!0:void 0},get classList(){return{...t.classList,[t.class??``]:!!t.class}},get children(){return[a(N.Trigger,{as:`div`,role:`button`,"data-slot":`tool-error-card-trigger`,get children(){return[(()=>{var e=z();return s(e,a(c,{get when(){return t.loading},get fallback(){return a(xe,{})},get children(){return a(Se,{})}})),e})(),(()=>{var e=H(),n=e.firstChild,o=n.firstChild;return o.nextSibling,s(o,()=>t.title),s(n,a(c,{get when(){return t.subtitleHref},get fallback(){return(()=>{var e=W();return s(e,()=>t.subtitle),e})()},get children(){var e=B();return e.$$pointerdown=e=>e.stopPropagation(),e.$$click=e=>e.stopPropagation(),s(e,()=>t.subtitle),_(()=>i(e,`href`,t.subtitleHref)),e}}),null),s(n,a(c,{get when(){return r()},get children(){var e=V();return s(e,a(Ce,{})),e}}),null),e})()]}}),a(c,{get when(){return r()},get children(){return a(N.Content,{"data-slot":`tool-error-card-content`,get children(){var e=U();return s(e,()=>t.suffix),e}})}})]}}))}var I,L,R,z,B,V,H,U,W,we=e((()=>{o(),ye(),v(),be(),I=r(`<svg data-slot=tool-error-card-ban width=16 height=16 viewBox="0 0 16 16"fill=none xmlns=http://www.w3.org/2000/svg aria-hidden=true><path d="M3.44283 12.5575L12.5495 3.45081M14.4446 8.00011C14.4446 11.5593 11.5593 14.4446 8.00011 14.4446C4.44094 14.4446 1.55566 11.5593 1.55566 8.00011C1.55566 4.44094 4.44094 1.55566 8.00011 1.55566C11.5593 1.55566 14.4446 4.44094 14.4446 8.00011Z"stroke=currentColor>`),L=r(`<svg data-slot=tool-error-card-loader width=16 height=16 viewBox="0 0 16 16"fill=none xmlns=http://www.w3.org/2000/svg aria-hidden=true><g transform="translate(8 8)"><circle r=5.9 fill=none stroke=#3A3A3A stroke-width=1 stroke-opacity=0.3 transform=rotate(-90)></circle><circle r=5.9 fill=none stroke=#3A3A3A stroke-width=1 pathLength=100 stroke-dasharray="25 75"transform=rotate(-90)>`),R=r(`<svg data-slot=tool-error-card-chevron width=14 height=14 viewBox="0 0 14 14"fill=none xmlns=http://www.w3.org/2000/svg aria-hidden=true><path d="M5.90795 9.62425C5.61628 9.81865 5.25 9.57825 5.25 9.19235V4.80837C5.25 4.42247 5.61628 4.18204 5.90795 4.37648L9.1959 6.56846C9.48535 6.7614 9.48535 7.2393 9.1959 7.43224L5.90795 9.62425Z"fill=currentColor>`),z=r(`<span data-slot=tool-error-card-icon-wrap>`),B=r(`<a data-slot=tool-error-card-subtitle>`),V=r(`<span data-slot=tool-error-card-chevron-wrap>`),H=r(`<div data-slot=tool-error-card-main><div data-slot=tool-error-card-labels><span data-slot=tool-error-card-title></span><span data-slot=tool-error-card-sep aria-hidden=true>·`),U=r(`<div data-slot=tool-error-card-suffix>`),W=r(`<span data-slot=tool-error-card-subtitle>`),n([`click`,`pointerdown`])})),G,K,q,J,Y,X,Z,Q,$;e((()=>{o(),v(),E(),we(),G=r(`<div style=display:flex;flex-direction:column;gap:24px;max-width:420px>`),K='### Overview\nCompact tool error row with optional expandable detail, aligned to the OpenCode design system spec.\n\n### API\n- `ToolErrorCardV2` wraps Kobalte `Collapsible` directly. Pass `open`, `defaultOpen`, and `onOpenChange` like any disclosure (controlled when `open` is defined).\n- Without a non-empty `suffix`, the card is not expandable (`disabled` on the collapsible root).\n\n### Theming\n- Uses `data-component="tool-error-card"` and slot attributes; colors are CSS variables on the root (`--tec-*`).\n',q={title:`UI V2/ToolErrorCard`,id:`components-tool-error-card-v2`,component:F,tags:[`autodocs`],parameters:{frameBackground:`#fff`,layout:`padded`,docs:{description:{component:K}}}},J={args:{title:`Read`,subtitle:`Permission denied`,suffix:`The tool could not access the requested path.`,defaultOpen:!1},render:e=>a(F,e)},Y={args:{title:`Read`,subtitle:`Working`,suffix:`Details appear when the tool finishes.`,loading:!0,defaultOpen:!1},render:e=>a(F,e)},X={args:{title:`Task`,subtitle:`View logs`,subtitleHref:`https://example.com`,suffix:`Subagent exited with code 1.`,defaultOpen:!1},render:e=>a(F,e)},Z={args:{title:`List`,subtitle:`No detail`,defaultOpen:!1},render:e=>a(F,e)},Q={render:()=>{let[e,n]=p(!1);return(()=>{var r=G();return s(r,a(ue,{type:`button`,classList:{"w-fit":!0},onClick:()=>n(e=>!e),get children(){return[`Toggle from outside: `,t(()=>e()?`Open`:`Closed`)]}}),null),s(r,a(F,{title:`Grep`,subtitle:`Timeout`,suffix:`Operation exceeded 30s.`,get open(){return e()},onOpenChange:n}),null),r})()}},J.parameters={...J.parameters,docs:{...J.parameters?.docs,source:{originalSource:`{
+  args: {
+    title: "Read",
+    subtitle: "Permission denied",
+    suffix: "The tool could not access the requested path.",
+    defaultOpen: false
+  } satisfies ToolErrorCardV2Props,
+  render: (args: ToolErrorCardV2Props) => <ToolErrorCardV2 {...args} />
+}`,...J.parameters?.docs?.source}}},Y.parameters={...Y.parameters,docs:{...Y.parameters?.docs,source:{originalSource:`{
+  args: {
+    title: "Read",
+    subtitle: "Working",
+    suffix: "Details appear when the tool finishes.",
+    loading: true,
+    defaultOpen: false
+  } satisfies ToolErrorCardV2Props,
+  render: (args: ToolErrorCardV2Props) => <ToolErrorCardV2 {...args} />
+}`,...Y.parameters?.docs?.source}}},X.parameters={...X.parameters,docs:{...X.parameters?.docs,source:{originalSource:`{
+  args: {
+    title: "Task",
+    subtitle: "View logs",
+    subtitleHref: "https://example.com",
+    suffix: "Subagent exited with code 1.",
+    defaultOpen: false
+  } satisfies ToolErrorCardV2Props,
+  render: (args: ToolErrorCardV2Props) => <ToolErrorCardV2 {...args} />
+}`,...X.parameters?.docs?.source}}},Z.parameters={...Z.parameters,docs:{...Z.parameters?.docs,source:{originalSource:`{
+  args: {
+    title: "List",
+    subtitle: "No detail",
+    defaultOpen: false
+  } satisfies ToolErrorCardV2Props,
+  render: (args: ToolErrorCardV2Props) => <ToolErrorCardV2 {...args} />
+}`,...Z.parameters?.docs?.source}}},Q.parameters={...Q.parameters,docs:{...Q.parameters?.docs,source:{originalSource:`{
+  render: () => {
+    const [open, setOpen] = createSignal(false);
+    return <div style={{
+      display: "flex",
+      "flex-direction": "column",
+      gap: "24px",
+      "max-width": "420px"
+    }}>
+        <ButtonV2 type="button" classList={{
+        "w-fit": true
+      }} onClick={() => setOpen(o => !o)}>
+          Toggle from outside: {open() ? "Open" : "Closed"}
+        </ButtonV2>
+        <ToolErrorCardV2 title="Grep" subtitle="Timeout" suffix="Operation exceeded 30s." open={open()} onOpenChange={setOpen} />
+      </div>;
+  }
+}`,...Q.parameters?.docs?.source}}},$=[`Default`,`Loading`,`SubtitleLink`,`NoSuffixDisabled`,`Controlled`]}))();export{Q as Controlled,J as Default,Y as Loading,Z as NoSuffixDisabled,X as SubtitleLink,$ as __namedExportsOrder,q as default};
