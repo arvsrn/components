@@ -63,6 +63,14 @@ body {
   font-family: var(--font-family-sans), var(--sans);
 }
 
+::selection {
+  background-color: #009eff2a;
+}
+
+::-moz-selection {
+  background-color: #009eff2a;
+}
+
 /* Global control reset to neutralize UA defaults consistently. */
 button,
 input,
