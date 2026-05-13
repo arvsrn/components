@@ -16,7 +16,7 @@ Square icon-only button v2 with three visual variants and three sizes.
 `
 
 export default {
-  title: "UI V2/Icon Button",
+  title: "UI V2/IconButton",
   id: "components-icon-button-v2",
   component: IconButtonV2,
   tags: ["autodocs"],
