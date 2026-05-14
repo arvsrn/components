@@ -44,7 +44,7 @@ function LoaderIcon() {
         <circle
           r={r}
           fill="none"
-          stroke="#3A3A3A"
+          stroke="var(--icon-icon-base)"
           stroke-width="1"
           stroke-opacity="0.3"
           transform="rotate(-90)"
@@ -52,7 +52,7 @@ function LoaderIcon() {
         <circle
           r={r}
           fill="none"
-          stroke="#3A3A3A"
+          stroke="var(--icon-icon-base)"
           stroke-width="1"
           pathLength="100"
           stroke-dasharray="25 75"

@@ -22,13 +22,11 @@ const preview: Preview = {
         date: /Date$/i,
       },
     },
-    frameBackground: '#fff',
     framePadding: '24px',
     frameHeight: '240px',
   },
   decorators: [
     (Story, context) => {
-      const frameBackground = context.parameters.frameBackground ?? '#fff'
       const framePadding = context.parameters.framePadding ?? '24px'
       const frameHeight = context.parameters.frameHeight ?? '240px'
       const theme = context.globals.theme ?? 'light'
@@ -37,7 +35,8 @@ const preview: Preview = {
         <div
           data-theme={theme}
           style={{
-            background: frameBackground,
+            background: 'var(--background-bg-base)',
+            color: 'var(--text-text-base)',
             padding: framePadding,
             'min-height': frameHeight,
             width: '100%',

@@ -6,12 +6,9 @@
   padding: 2px;
   min-width: 160px;
 
-  background: #FAFAFA;
+  background: var(--background-bg-layer-01);
   border-radius: 6px;
-  box-shadow:
-    0 0 0 0.5px rgba(0, 0, 0, 0.12),
-    0 4px 8px rgba(0, 0, 0, 0.08),
-    0 8px 16px rgba(0, 0, 0, 0.04);
+  box-shadow: var(--elevation-floating);
 
   outline: none;
   font-family: var(--font-family-sans), 'Inter', system-ui, sans-serif;
@@ -29,14 +26,14 @@
 }
 
 [data-component="menu-v2-item"] {
-  --menu-v2-fg: #161616;
-  --menu-v2-fg-muted: #808080;
-  --menu-v2-fg-subtle: #5c5c5c;
-  --menu-v2-icon: #3a3a3a;
-  --menu-v2-accent: #3b5cf6;
-  --menu-v2-badge-bg: #eeeeee;
-  --menu-v2-badge-border: rgba(0, 0, 0, 0.1);
-  --menu-v2-hover: rgba(0, 0, 0, 0.04);
+  --menu-v2-fg: var(--text-text-base);
+  --menu-v2-fg-muted: var(--text-text-faint);
+  --menu-v2-fg-subtle: var(--text-text-muted);
+  --menu-v2-icon: var(--icon-icon-base);
+  --menu-v2-accent: var(--text-text-accent);
+  --menu-v2-badge-bg: var(--background-bg-layer-02);
+  --menu-v2-badge-border: var(--border-border-base);
+  --menu-v2-hover: var(--overlay-simple-overlay-hover);
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -156,7 +153,7 @@
   height: 1px;
   width: calc(100% + 4px);
   margin: 2px -2px;
-  background: rgba(0, 0, 0, 0.08);
+  background: var(--border-border-muted);
   border: none;
 }
 
@@ -172,7 +169,7 @@
   font-weight: 530;
   line-height: 100%;
   letter-spacing: 0.05px;
-  color: #808080;
+  color: var(--text-text-faint);
   user-select: none;
   font-variant-numeric: tabular-nums;
 }

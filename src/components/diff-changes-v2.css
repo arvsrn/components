@@ -16,10 +16,10 @@
   }
 
   [data-slot="diff-changes-additions"] {
-    color: #198b43;
+    color: var(--state-fg-success);
   }
 
   [data-slot="diff-changes-deletions"] {
-    color: #b82d35;
+    color: var(--state-fg-danger);
   }
 }

@@ -1,0 +1,410 @@
+@layer theme {
+  :root {
+    color-scheme: light;
+
+    /* ── Background ── */
+    --background-bg-base: var(--grey-100);
+    --background-bg-deep: var(--grey-200);
+    --background-bg-layer-01: var(--grey-200);
+    --background-bg-layer-02: var(--grey-300);
+    --background-bg-layer-03: var(--grey-400);
+    --background-bg-inverse: var(--grey-1000);
+    --background-bg-contrast: var(--grey-900);
+    --background-bg-button-neutral: var(--grey-100);
+    --background-bg-accent: var(--blue-600);
+
+    /* ── Text ── */
+    --text-text-base: var(--grey-1000);
+    --text-text-muted: var(--grey-700);
+    --text-text-faint: var(--grey-600);
+    --text-text-inverse: var(--grey-100);
+    --text-text-contrast: var(--grey-100);
+    --text-text-accent: var(--blue-600);
+    --text-text-accent-hover: var(--blue-700);
+
+    /* ── Icon ── */
+    --icon-icon-base: var(--grey-800);
+    --icon-icon-muted: var(--grey-600);
+    --icon-icon-inverse: var(--grey-100);
+    --icon-icon-contrast: var(--grey-200);
+    --icon-icon-accent: var(--blue-600);
+    --icon-icon-accent-hover: var(--blue-700);
+
+    /* ── Border ── */
+    --border-border-muted: var(--alpha-dark-8);
+    --border-border-base: var(--alpha-dark-10);
+    --border-border-strong: var(--alpha-dark-20);
+    --border-border-inverse: var(--grey-1000);
+    --border-border-focus: var(--blue-500);
+
+    /* ── Overlay ── */
+    --overlay-simple-overlay-hover: var(--alpha-dark-4);
+    --overlay-simple-overlay-pressed: var(--alpha-dark-8);
+    --overlay-simple-overlay-contrast-hover: var(--alpha-light-12);
+    --overlay-simple-overlay-contrast-pressed: var(--alpha-light-24);
+    --overlay-simple-overlay-scrim: var(--alpha-dark-40);
+    --overlay-gradient-depth-overlay-depth-top: var(--alpha-light-100);
+    --overlay-gradient-depth-overlay-depth-bot: var(--alpha-light-0);
+    --overlay-simple-tab-active-scrim: #FAFAFA00;
+    --overlay-simple-tab-hover-scrim: #EEEEEE00;
+    --overlay-simple-tab-scrim: #FAFAFA00;
+
+    /* ── State ── */
+    --state-bg-success: var(--green-100);
+    --state-fg-success: var(--green-800);
+    --state-border-success: var(--green-300);
+    --state-bg-warning: var(--yellow-100);
+    --state-fg-warning: var(--yellow-800);
+    --state-border-warning: var(--yellow-300);
+    --state-bg-danger: var(--red-100);
+    --state-fg-danger: var(--red-800);
+    --state-border-danger: var(--red-300);
+    --state-bg-info: var(--blue-100);
+    --state-fg-info: var(--blue-800);
+    --state-border-info: var(--blue-300);
+
+    /* ── Elevation ── */
+    --elevation-raised:
+      0px 2px 4px 0px var(--alpha-dark-4),
+      0px 1px 2px -1px var(--alpha-dark-8),
+      0px 0px 0px 0.5px var(--alpha-dark-12),
+      0px 0px 0px 0px var(--alpha-dark-0);
+    --elevation-floating:
+      0px 8px 16px 0px var(--alpha-dark-4),
+      0px 4px 8px 0px var(--alpha-dark-8),
+      0px 0px 0px 0.5px var(--alpha-dark-12),
+      0px 0px 0px 0px var(--alpha-dark-0);
+    --elevation-overlay:
+      0px 16px 32px 0px var(--alpha-dark-4),
+      0px 8px 16px 0px var(--alpha-dark-8),
+      0px 0px 0px 0.5px var(--alpha-dark-12),
+      0px 0px 0px 0px var(--alpha-dark-0);
+    --elevation-button-neutral:
+      0px 1px 1.5px 0px var(--alpha-dark-10),
+      0px 0px 0px 0.5px var(--alpha-dark-14),
+      0px 0px 0px 0px var(--alpha-dark-0);
+    --elevation-button-contrast:
+      0px 1px 1.5px 0px var(--alpha-dark-20),
+      0px 0px 0px 0.5px var(--grey-800),
+      inset 0px 1px 2px 0px var(--alpha-light-14),
+      inset 0px -1px 2px 0px var(--alpha-dark-6),
+      0px 0px 0px 0px var(--alpha-dark-0);
+    --elevation-elements:
+      0px 0.5px 0.5px 0px var(--alpha-dark-40);
+    --elevation-switch-off:
+      inset 0px 1px 1px 0px var(--alpha-dark-8),
+      inset 0px 0.5px 0.5px 0px var(--alpha-dark-8),
+      inset 0px 0px 0px 0.5px var(--alpha-dark-10);
+    --elevation-switch-on:
+      inset 0px 2px 2px 0px var(--alpha-dark-10),
+      inset 0px 1px 1px 0px var(--alpha-dark-10),
+      inset 0px 0px 0px 0.5px var(--alpha-dark-20);
+
+    /* ── Illustration ── */
+    --illustration-illustration-layer-01: var(--grey-300);
+    --illustration-illustration-layer-02: var(--grey-400);
+    --illustration-illustration-layer-03: var(--grey-500);
+  }
+
+  /* OS preference fallback (no JS needed) */
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+
+      --background-bg-base: var(--grey-1000);
+      --background-bg-deep: var(--grey-1100);
+      --background-bg-layer-01: var(--grey-900);
+      --background-bg-layer-02: var(--grey-800);
+      --background-bg-layer-03: var(--grey-700);
+      --background-bg-inverse: var(--grey-100);
+      --background-bg-contrast: var(--grey-700);
+      --background-bg-button-neutral: var(--alpha-light-6);
+      --background-bg-accent: var(--blue-600);
+
+      --text-text-base: var(--grey-200);
+      --text-text-muted: var(--grey-500);
+      --text-text-faint: var(--grey-600);
+      --text-text-inverse: var(--grey-1000);
+      --text-text-contrast: var(--grey-100);
+      --text-text-accent: var(--blue-400);
+      --text-text-accent-hover: var(--blue-300);
+
+      --icon-icon-base: var(--grey-400);
+      --icon-icon-muted: var(--grey-600);
+      --icon-icon-inverse: var(--grey-1000);
+      --icon-icon-contrast: var(--grey-200);
+      --icon-icon-accent: var(--blue-400);
+      --icon-icon-accent-hover: var(--blue-300);
+
+      --border-border-muted: var(--alpha-light-8);
+      --border-border-base: var(--alpha-light-10);
+      --border-border-strong: var(--alpha-light-20);
+      --border-border-inverse: var(--grey-100);
+      --border-border-focus: var(--blue-500);
+
+      --overlay-simple-overlay-hover: var(--alpha-light-6);
+      --overlay-simple-overlay-pressed: var(--alpha-light-10);
+      --overlay-simple-overlay-contrast-hover: var(--alpha-dark-24);
+      --overlay-simple-overlay-contrast-pressed: var(--alpha-dark-40);
+      --overlay-simple-overlay-scrim: var(--alpha-light-30);
+      --overlay-gradient-depth-overlay-depth-top: var(--alpha-light-100);
+      --overlay-gradient-depth-overlay-depth-bot: var(--alpha-light-0);
+      --overlay-simple-tab-active-scrim: #24242400;
+      --overlay-simple-tab-hover-scrim: #3A3A3A00;
+      --overlay-simple-tab-scrim: #08080800;
+
+      --state-bg-success: var(--green-1200);
+      --state-fg-success: var(--green-500);
+      --state-border-success: var(--green-900);
+      --state-bg-warning: var(--yellow-1200);
+      --state-fg-warning: var(--yellow-500);
+      --state-border-warning: var(--yellow-900);
+      --state-bg-danger: var(--red-1200);
+      --state-fg-danger: var(--red-500);
+      --state-border-danger: var(--red-900);
+      --state-bg-info: var(--blue-1200);
+      --state-fg-info: var(--blue-500);
+      --state-border-info: var(--blue-900);
+
+      --elevation-raised:
+        0px 2px 4px 0px var(--alpha-dark-30),
+        0px 1px 2px 0px var(--alpha-dark-30),
+        0px 0px 0px 0.5px var(--alpha-light-16),
+        0px -0.5px 0px 0px var(--alpha-light-6);
+      --elevation-floating:
+        0px 8px 16px 0px var(--alpha-dark-30),
+        0px 4px 8px 0px var(--alpha-dark-30),
+        0px 0px 0px 0.5px var(--alpha-light-16),
+        0px -0.5px 0px 0px var(--alpha-light-6);
+      --elevation-overlay:
+        0px 16px 32px 0px var(--alpha-dark-30),
+        0px 8px 16px 0px var(--alpha-dark-30),
+        0px 0px 0px 0.5px var(--alpha-light-16),
+        0px -0.5px 0px 0px var(--alpha-light-6);
+      --elevation-button-neutral:
+        0px 1px 2px 0px var(--alpha-dark-40),
+        0px 0px 0px 0.5px var(--alpha-light-20),
+        0px -0.5px 0px 0px var(--alpha-light-10);
+      --elevation-button-contrast:
+        0px 1px 2px 0px var(--alpha-dark-40),
+        0px 0px 0px 0.5px var(--alpha-light-40),
+        inset 0px 0px 0px 0px var(--alpha-light-0),
+        inset 0px 0px 0px 0px var(--alpha-light-0),
+        0px -0.5px 0px 0px var(--alpha-light-30);
+      --elevation-elements:
+        0px 0.5px 0.5px 0px var(--alpha-dark-40);
+      --elevation-switch-off:
+        inset 0px -0.5px 0px 0px var(--alpha-light-10),
+        inset 0px 0px 0px 0px var(--alpha-light-0),
+        inset 0px 0px 0px 0.5px var(--alpha-light-16);
+      --elevation-switch-on:
+        inset 0px -0.5px 0px 0px var(--alpha-light-10),
+        inset 0px 0px 0px 0px var(--alpha-light-0),
+        inset 0px 0px 0px 0.5px var(--alpha-light-16);
+
+      --illustration-illustration-layer-01: var(--grey-900);
+      --illustration-illustration-layer-02: var(--grey-800);
+      --illustration-illustration-layer-03: var(--grey-700);
+    }
+  }
+
+  /* Explicit light mode via data attribute (overrides OS dark preference) */
+  [data-theme="light"] {
+    color-scheme: light;
+
+    --background-bg-base: var(--grey-100);
+    --background-bg-deep: var(--grey-200);
+    --background-bg-layer-01: var(--grey-200);
+    --background-bg-layer-02: var(--grey-300);
+    --background-bg-layer-03: var(--grey-400);
+    --background-bg-inverse: var(--grey-1000);
+    --background-bg-contrast: var(--grey-900);
+    --background-bg-button-neutral: var(--grey-100);
+    --background-bg-accent: var(--blue-600);
+
+    --text-text-base: var(--grey-1000);
+    --text-text-muted: var(--grey-700);
+    --text-text-faint: var(--grey-600);
+    --text-text-inverse: var(--grey-100);
+    --text-text-contrast: var(--grey-100);
+    --text-text-accent: var(--blue-600);
+    --text-text-accent-hover: var(--blue-700);
+
+    --icon-icon-base: var(--grey-800);
+    --icon-icon-muted: var(--grey-600);
+    --icon-icon-inverse: var(--grey-100);
+    --icon-icon-contrast: var(--grey-200);
+    --icon-icon-accent: var(--blue-600);
+    --icon-icon-accent-hover: var(--blue-700);
+
+    --border-border-muted: var(--alpha-dark-8);
+    --border-border-base: var(--alpha-dark-10);
+    --border-border-strong: var(--alpha-dark-20);
+    --border-border-inverse: var(--grey-1000);
+    --border-border-focus: var(--blue-500);
+
+    --overlay-simple-overlay-hover: var(--alpha-dark-4);
+    --overlay-simple-overlay-pressed: var(--alpha-dark-8);
+    --overlay-simple-overlay-contrast-hover: var(--alpha-light-12);
+    --overlay-simple-overlay-contrast-pressed: var(--alpha-light-24);
+    --overlay-simple-overlay-scrim: var(--alpha-dark-40);
+    --overlay-gradient-depth-overlay-depth-top: var(--alpha-light-100);
+    --overlay-gradient-depth-overlay-depth-bot: var(--alpha-light-0);
+    --overlay-simple-tab-active-scrim: #FAFAFA00;
+    --overlay-simple-tab-hover-scrim: #EEEEEE00;
+    --overlay-simple-tab-scrim: #FAFAFA00;
+
+    --state-bg-success: var(--green-100);
+    --state-fg-success: var(--green-800);
+    --state-border-success: var(--green-300);
+    --state-bg-warning: var(--yellow-100);
+    --state-fg-warning: var(--yellow-800);
+    --state-border-warning: var(--yellow-300);
+    --state-bg-danger: var(--red-100);
+    --state-fg-danger: var(--red-800);
+    --state-border-danger: var(--red-300);
+    --state-bg-info: var(--blue-100);
+    --state-fg-info: var(--blue-800);
+    --state-border-info: var(--blue-300);
+
+    --elevation-raised:
+      0px 2px 4px 0px var(--alpha-dark-4),
+      0px 1px 2px -1px var(--alpha-dark-8),
+      0px 0px 0px 0.5px var(--alpha-dark-12),
+      0px 0px 0px 0px var(--alpha-dark-0);
+    --elevation-floating:
+      0px 8px 16px 0px var(--alpha-dark-4),
+      0px 4px 8px 0px var(--alpha-dark-8),
+      0px 0px 0px 0.5px var(--alpha-dark-12),
+      0px 0px 0px 0px var(--alpha-dark-0);
+    --elevation-overlay:
+      0px 16px 32px 0px var(--alpha-dark-4),
+      0px 8px 16px 0px var(--alpha-dark-8),
+      0px 0px 0px 0.5px var(--alpha-dark-12),
+      0px 0px 0px 0px var(--alpha-dark-0);
+    --elevation-button-neutral:
+      0px 1px 1.5px 0px var(--alpha-dark-10),
+      0px 0px 0px 0.5px var(--alpha-dark-14),
+      0px 0px 0px 0px var(--alpha-dark-0);
+    --elevation-button-contrast:
+      0px 1px 1.5px 0px var(--alpha-dark-20),
+      0px 0px 0px 0.5px var(--grey-800),
+      inset 0px 1px 2px 0px var(--alpha-light-14),
+      inset 0px -1px 2px 0px var(--alpha-dark-6),
+      0px 0px 0px 0px var(--alpha-dark-0);
+    --elevation-elements:
+      0px 0.5px 0.5px 0px var(--alpha-dark-40);
+    --elevation-switch-off:
+      inset 0px 1px 1px 0px var(--alpha-dark-8),
+      inset 0px 0.5px 0.5px 0px var(--alpha-dark-8),
+      inset 0px 0px 0px 0.5px var(--alpha-dark-10);
+    --elevation-switch-on:
+      inset 0px 2px 2px 0px var(--alpha-dark-10),
+      inset 0px 1px 1px 0px var(--alpha-dark-10),
+      inset 0px 0px 0px 0.5px var(--alpha-dark-20);
+
+    --illustration-illustration-layer-01: var(--grey-300);
+    --illustration-illustration-layer-02: var(--grey-400);
+    --illustration-illustration-layer-03: var(--grey-500);
+  }
+
+  /* Explicit dark mode via data attribute (Storybook toggle, runtime JS) */
+  [data-theme="dark"] {
+    color-scheme: dark;
+
+    --background-bg-base: var(--grey-1000);
+    --background-bg-deep: var(--grey-1100);
+    --background-bg-layer-01: var(--grey-900);
+    --background-bg-layer-02: var(--grey-800);
+    --background-bg-layer-03: var(--grey-700);
+    --background-bg-inverse: var(--grey-100);
+    --background-bg-contrast: var(--grey-700);
+    --background-bg-button-neutral: var(--alpha-light-6);
+    --background-bg-accent: var(--blue-600);
+
+    --text-text-base: var(--grey-200);
+    --text-text-muted: var(--grey-500);
+    --text-text-faint: var(--grey-600);
+    --text-text-inverse: var(--grey-1000);
+    --text-text-contrast: var(--grey-100);
+    --text-text-accent: var(--blue-400);
+    --text-text-accent-hover: var(--blue-300);
+
+    --icon-icon-base: var(--grey-400);
+    --icon-icon-muted: var(--grey-600);
+    --icon-icon-inverse: var(--grey-1000);
+    --icon-icon-contrast: var(--grey-200);
+    --icon-icon-accent: var(--blue-400);
+    --icon-icon-accent-hover: var(--blue-300);
+
+    --border-border-muted: var(--alpha-light-8);
+    --border-border-base: var(--alpha-light-10);
+    --border-border-strong: var(--alpha-light-20);
+    --border-border-inverse: var(--grey-100);
+    --border-border-focus: var(--blue-500);
+
+    --overlay-simple-overlay-hover: var(--alpha-light-6);
+    --overlay-simple-overlay-pressed: var(--alpha-light-10);
+    --overlay-simple-overlay-contrast-hover: var(--alpha-dark-24);
+    --overlay-simple-overlay-contrast-pressed: var(--alpha-dark-40);
+    --overlay-simple-overlay-scrim: var(--alpha-light-30);
+    --overlay-gradient-depth-overlay-depth-top: var(--alpha-light-100);
+    --overlay-gradient-depth-overlay-depth-bot: var(--alpha-light-0);
+    --overlay-simple-tab-active-scrim: #24242400;
+    --overlay-simple-tab-hover-scrim: #3A3A3A00;
+    --overlay-simple-tab-scrim: #08080800;
+
+    --state-bg-success: var(--green-1200);
+    --state-fg-success: var(--green-500);
+    --state-border-success: var(--green-900);
+    --state-bg-warning: var(--yellow-1200);
+    --state-fg-warning: var(--yellow-500);
+    --state-border-warning: var(--yellow-900);
+    --state-bg-danger: var(--red-1200);
+    --state-fg-danger: var(--red-500);
+    --state-border-danger: var(--red-900);
+    --state-bg-info: var(--blue-1200);
+    --state-fg-info: var(--blue-500);
+    --state-border-info: var(--blue-900);
+
+    --elevation-raised:
+      0px 2px 4px 0px var(--alpha-dark-30),
+      0px 1px 2px 0px var(--alpha-dark-30),
+      0px 0px 0px 0.5px var(--alpha-light-16),
+      0px -0.5px 0px 0px var(--alpha-light-6);
+    --elevation-floating:
+      0px 8px 16px 0px var(--alpha-dark-30),
+      0px 4px 8px 0px var(--alpha-dark-30),
+      0px 0px 0px 0.5px var(--alpha-light-16),
+      0px -0.5px 0px 0px var(--alpha-light-6);
+    --elevation-overlay:
+      0px 16px 32px 0px var(--alpha-dark-30),
+      0px 8px 16px 0px var(--alpha-dark-30),
+      0px 0px 0px 0.5px var(--alpha-light-16),
+      0px -0.5px 0px 0px var(--alpha-light-6);
+    --elevation-button-neutral:
+      0px 1px 2px 0px var(--alpha-dark-40),
+      0px 0px 0px 0.5px var(--alpha-light-20),
+      0px -0.5px 0px 0px var(--alpha-light-10);
+    --elevation-button-contrast:
+      0px 1px 2px 0px var(--alpha-dark-40),
+      0px 0px 0px 0.5px var(--alpha-light-40),
+      inset 0px 0px 0px 0px var(--alpha-light-0),
+      inset 0px 0px 0px 0px var(--alpha-light-0),
+      0px -0.5px 0px 0px var(--alpha-light-30);
+    --elevation-elements:
+      0px 0.5px 0.5px 0px var(--alpha-dark-40);
+    --elevation-switch-off:
+      inset 0px -0.5px 0px 0px var(--alpha-light-10),
+      inset 0px 0px 0px 0px var(--alpha-light-0),
+      inset 0px 0px 0px 0.5px var(--alpha-light-16);
+    --elevation-switch-on:
+      inset 0px -0.5px 0px 0px var(--alpha-light-10),
+      inset 0px 0px 0px 0px var(--alpha-light-0),
+      inset 0px 0px 0px 0.5px var(--alpha-light-16);
+
+    --illustration-illustration-layer-01: var(--grey-900);
+    --illustration-illustration-layer-02: var(--grey-800);
+    --illustration-illustration-layer-03: var(--grey-700);
+  }
+}

@@ -1,5 +1,7 @@
 @import "@fontsource-variable/inter";
 @import "tailwindcss";
+@import "./styles/colors.css";
+@import "./styles/theme.css";
 
 :root {
   --text: #6b6375;

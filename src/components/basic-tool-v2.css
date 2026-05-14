@@ -5,12 +5,12 @@
 }
 
 [data-component="basic-tool-v2"] {
-  --bt-title: #161616;
-  --bt-sep: #5c5c5c;
-  --bt-subtitle: #5c5c5c;
-  --bt-args: #5c5c5c;
-  --bt-chevron: #808080;
-  --bt-content: #5c5c5c;
+  --bt-title: var(--text-text-base);
+  --bt-sep: var(--text-text-muted);
+  --bt-subtitle: var(--text-text-muted);
+  --bt-args: var(--text-text-muted);
+  --bt-chevron: var(--text-text-faint);
+  --bt-content: var(--text-text-muted);
 
   box-sizing: border-box;
   display: flex;
@@ -41,7 +41,7 @@
   }
 
   [data-slot="basic-tool-v2-trigger"]:focus-visible {
-    outline: 2px solid #7698fd;
+    outline: 2px solid var(--border-border-focus);
     outline-offset: 2px;
     border-radius: 2px;
   }
