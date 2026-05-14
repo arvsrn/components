@@ -1,10 +1,10 @@
 import { ButtonV2 } from "./button-v2";
 
 const docs = `### Overview
-Button v2 with four visual variants and two sizes.
+Button v2 with three visual variants and two sizes.
 
 ### API
-- \`variant\`: "neutral" | "contrast" | "ghost" | "notify-highlight".
+- \`variant\`: "neutral" | "contrast" | "ghost".
 - \`size\`: "normal" | "large".
 - \`icon\`: Optional icon name.
 - Inherits Kobalte Button props and native button attributes.
@@ -39,7 +39,7 @@ export default {
     },
     variant: {
       control: "select",
-      options: ["neutral", "contrast", "ghost", "notify-highlight"],
+      options: ["neutral", "contrast", "ghost"],
     },
     size: {
       control: "select",
@@ -63,7 +63,6 @@ export const Variants = {
       <ButtonV2 variant="neutral">Neutral</ButtonV2>
       <ButtonV2 variant="contrast">Contrast</ButtonV2>
       <ButtonV2 variant="ghost">Ghost</ButtonV2>
-      <ButtonV2 variant="notify-highlight">Notify highlight</ButtonV2>
     </div>
   ),
 };
@@ -125,7 +124,6 @@ export const AllStates = {
       "neutral",
       "contrast",
       "ghost",
-      "notify-highlight",
     ] as const;
     const states = [
       "default",

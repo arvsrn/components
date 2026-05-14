@@ -5,7 +5,7 @@ Square icon-only button v2 with three visual variants and three sizes.
 
 ### API
 - \`icon\`: Icon name from the icon component.
-- \`variant\`: "primary" | "secondary" | "ghost".
+- \`variant\`: "neutral" | "contrast" | "ghost".
 - \`size\`: "small" | "normal" | "large".
 - \`iconSize\`: Optional explicit icon size override.
 - Inherits Kobalte Button props and native button attributes.
@@ -31,7 +31,7 @@ export default {
   },
   args: {
     icon: "plus",
-    variant: "secondary",
+    variant: "neutral",
     size: "normal",
   },
   argTypes: {
@@ -40,7 +40,7 @@ export default {
     },
     variant: {
       control: "select",
-      options: ["primary", "secondary", "ghost"],
+      options: ["neutral", "contrast", "ghost"],
     },
     size: {
       control: "select",
@@ -58,8 +58,8 @@ export const Playground = {}
 export const Variants = {
   render: () => (
     <div style={{ display: "flex", gap: "12px", "align-items": "center", "flex-wrap": "wrap" }}>
-      <IconButtonV2 icon="plus" variant="secondary" />
-      <IconButtonV2 icon="plus" variant="primary" />
+      <IconButtonV2 icon="plus" variant="neutral" />
+      <IconButtonV2 icon="plus" variant="contrast" />
       <IconButtonV2 icon="plus" variant="ghost" />
     </div>
   ),
@@ -68,16 +68,16 @@ export const Variants = {
 export const Sizes = {
   render: () => (
     <div style={{ display: "flex", gap: "12px", "align-items": "center", "flex-wrap": "wrap" }}>
-      <IconButtonV2 icon="plus" size="small" variant="secondary" />
-      <IconButtonV2 icon="plus" size="normal" variant="secondary" />
-      <IconButtonV2 icon="plus" size="large" variant="secondary" />
+      <IconButtonV2 icon="plus" size="small" variant="neutral" />
+      <IconButtonV2 icon="plus" size="normal" variant="neutral" />
+      <IconButtonV2 icon="plus" size="large" variant="neutral" />
     </div>
   ),
 }
 
 export const AllStates = {
   render: () => {
-    const variants = ["secondary", "primary", "ghost"] as const
+    const variants = ["neutral", "contrast", "ghost"] as const
     const states = ["default", "hover", "pressed", "focus", "disabled"] as const
 
     return (

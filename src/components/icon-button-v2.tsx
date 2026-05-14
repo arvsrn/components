@@ -9,7 +9,7 @@ export interface IconButtonV2Props
   icon: IconProps["name"]
   size?: "small" | "normal" | "large"
   iconSize?: IconProps["size"]
-  variant?: "primary" | "secondary" | "ghost"
+  variant?: "neutral" | "contrast" | "ghost"
 }
 
 export function IconButtonV2(props: ComponentProps<"button"> & IconButtonV2Props) {
@@ -20,7 +20,7 @@ export function IconButtonV2(props: ComponentProps<"button"> & IconButtonV2Props
       data-component="icon-button-v2"
       data-icon={props.icon}
       data-size={split.size || "normal"}
-      data-variant={split.variant || "secondary"}
+      data-variant={split.variant || "neutral"}
       classList={{
         ...split.classList,
         [split.class ?? ""]: !!split.class,

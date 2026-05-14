@@ -46,32 +46,32 @@
   color: currentColor;
 }
 
-/* Secondary */
-[data-component="icon-button-v2"][data-variant="secondary"] {
+/* Neutral */
+[data-component="icon-button-v2"][data-variant="neutral"] {
   background-color: var(--background-bg-button-neutral);
   color: var(--text-text-base);
   box-shadow: var(--elevation-button-neutral);
 }
 
-[data-component="icon-button-v2"][data-variant="secondary"]:is(:hover, [data-state="hover"]):not(:disabled) {
+[data-component="icon-button-v2"][data-variant="neutral"]:is(:hover, [data-state="hover"]):not(:disabled) {
   background-image:
     linear-gradient(90deg, var(--overlay-simple-overlay-hover) 0%, var(--overlay-simple-overlay-hover) 100%),
     linear-gradient(90deg, var(--background-bg-button-neutral) 0%, var(--background-bg-button-neutral) 100%);
 }
 
-[data-component="icon-button-v2"][data-variant="secondary"]:is(:active, [data-state="pressed"]):not(:disabled) {
+[data-component="icon-button-v2"][data-variant="neutral"]:is(:active, [data-state="pressed"]):not(:disabled) {
   background-image:
     linear-gradient(90deg, var(--overlay-simple-overlay-pressed) 0%, var(--overlay-simple-overlay-pressed) 100%),
     linear-gradient(90deg, var(--background-bg-button-neutral) 0%, var(--background-bg-button-neutral) 100%);
 }
 
-[data-component="icon-button-v2"][data-variant="secondary"]:is(:disabled, [data-state="disabled"]) {
+[data-component="icon-button-v2"][data-variant="neutral"]:is(:disabled, [data-state="disabled"]) {
   opacity: 0.5;
   cursor: not-allowed;
 }
 
-/* Primary */
-[data-component="icon-button-v2"][data-variant="primary"] {
+/* Contrast */
+[data-component="icon-button-v2"][data-variant="contrast"] {
   background-image:
     linear-gradient(180deg, var(--alpha-light-20) 0%, var(--alpha-light-0) 100%),
     linear-gradient(90deg, var(--background-bg-contrast) 0%, var(--background-bg-contrast) 100%);
@@ -80,21 +80,21 @@
   box-shadow: var(--elevation-button-contrast);
 }
 
-[data-component="icon-button-v2"][data-variant="primary"]:is(:hover, [data-state="hover"]):not(:disabled) {
+[data-component="icon-button-v2"][data-variant="contrast"]:is(:hover, [data-state="hover"]):not(:disabled) {
   background-image:
     linear-gradient(90deg, var(--overlay-simple-overlay-contrast-hover) 0%, var(--overlay-simple-overlay-contrast-hover) 100%),
     linear-gradient(180deg, var(--alpha-light-20) 0%, var(--alpha-light-0) 100%),
     linear-gradient(90deg, var(--background-bg-contrast) 0%, var(--background-bg-contrast) 100%);
 }
 
-[data-component="icon-button-v2"][data-variant="primary"]:is(:active, [data-state="pressed"]):not(:disabled) {
+[data-component="icon-button-v2"][data-variant="contrast"]:is(:active, [data-state="pressed"]):not(:disabled) {
   background-image:
     linear-gradient(90deg, var(--overlay-simple-overlay-contrast-pressed) 0%, var(--overlay-simple-overlay-contrast-pressed) 100%),
     linear-gradient(180deg, var(--alpha-light-20) 0%, var(--alpha-light-0) 100%),
     linear-gradient(90deg, var(--background-bg-contrast) 0%, var(--background-bg-contrast) 100%);
 }
 
-[data-component="icon-button-v2"][data-variant="primary"]:is(:disabled, [data-state="disabled"]) {
+[data-component="icon-button-v2"][data-variant="contrast"]:is(:disabled, [data-state="disabled"]) {
   opacity: 0.4;
   cursor: not-allowed;
 }

@@ -137,27 +137,3 @@
   opacity: 0.5;
   cursor: not-allowed;
 }
-
-/* Notify highlight */
-[data-component="button-v2"][data-variant="notify-highlight"] {
-  background-color: var(--grey-700);
-  color: var(--text-text-inverse);
-  text-shadow: 0 0.5px 0.5px rgba(0, 0, 0, 0.3);
-}
-
-[data-component="button-v2"][data-variant="notify-highlight"]:is(:hover, [data-state="hover"]):not(:disabled) {
-  background-image:
-    linear-gradient(90deg, var(--overlay-simple-overlay-contrast-hover) 0%, var(--overlay-simple-overlay-contrast-hover) 100%),
-    linear-gradient(90deg, var(--grey-700) 0%, var(--grey-700) 100%);
-}
-
-[data-component="button-v2"][data-variant="notify-highlight"]:is(:active, [data-state="pressed"]):not(:disabled) {
-  background-image:
-    linear-gradient(90deg, var(--overlay-simple-overlay-contrast-pressed) 0%, var(--overlay-simple-overlay-contrast-pressed) 100%),
-    linear-gradient(90deg, var(--grey-700) 0%, var(--grey-700) 100%);
-}
-
-[data-component="button-v2"][data-variant="notify-highlight"]:is(:disabled, [data-state="disabled"]) {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
