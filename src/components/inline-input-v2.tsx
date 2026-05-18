@@ -2,7 +2,7 @@ import { type ComponentProps, type JSX, Show, splitProps } from "solid-js"
 import { Icon } from "./icon"
 import "./inline-input-v2.css"
 
-export interface InlineInputV2Props extends Omit<ComponentProps<"input">, "type"> {
+export interface InlineInputV2Props extends Omit<ComponentProps<"input">, "type" | "prefix"> {
   /** Inline label shown before the field (prefix segment). */
   prefix: JSX.Element
   /** Fixed width for the prefix segment (px number or CSS length). Omit for fit-content. */

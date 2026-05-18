@@ -1,5 +1,5 @@
 import { createSignal } from "solid-js"
-import { BasicToolV2, type BasicToolV2Props } from "./basic-tool-v2"
+import { BasicToolV2 } from "./basic-tool-v2"
 
 const docs = `### Overview
 Compact collapsible tool row showing title, subtitle, args, and diff changes, with an expand/collapse chevron.
