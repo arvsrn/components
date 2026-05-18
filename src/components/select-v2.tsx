@@ -127,7 +127,7 @@ export function SelectV2<T>(props: SelectV2Props<T>) {
       multiple={false}
       disabled={local.disabled}
       data-component="select-v2-root"
-      gutter={4}
+      gutter={6}
       placement="bottom-start"
       value={local.current}
       options={grouped()}
@@ -202,9 +202,6 @@ export function SelectV2<T>(props: SelectV2Props<T>) {
         <Kobalte.Content
           data-component="menu-v2-content"
           data-slot="select-v2-content"
-          style={{
-            "transform-origin": "var(--kb-select-content-transform-origin)",
-          }}
         >
           <Kobalte.Listbox data-slot="select-v2-listbox" />
         </Kobalte.Content>
