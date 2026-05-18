@@ -30,6 +30,7 @@ const preview: Preview = {
       const framePadding = context.parameters.framePadding ?? '24px'
       const frameHeight = context.parameters.frameHeight ?? '240px'
       const theme = context.globals.theme ?? 'light'
+      document.documentElement.dataset.theme = theme
 
       return (
         <div

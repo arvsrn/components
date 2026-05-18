@@ -1,1 +1,0 @@
-import{n as e}from"./chunk-DnJy8xQt.js";import{it as t,st as n,tt as r}from"./iframe-Ck-CNuiI.js";import{b as i,h as a}from"./5WXHJDCZ-BYY-28qQ.js";function o(e,n){let[i,a]=t(s(n?.()));return r(()=>{a(e()?.tagName.toLowerCase()||s(n?.()))}),i}function s(e){return i(e)?e:void 0}var c=e((()=>{a(),n()}));export{c as n,o as t};
