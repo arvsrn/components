@@ -13,9 +13,11 @@ export function Switch(props: SwitchProps) {
     <Kobalte {...others} class={local.class} data-component="switch">
       <Kobalte.Input data-slot="switch-input" />
       <Show when={local.children}>
-        <Kobalte.Label data-slot="switch-label" classList={{ "sr-only": local.hideLabel }}>
-          {local.children}
-        </Kobalte.Label>
+        {(label) => (
+          <Kobalte.Label data-slot="switch-label" classList={{ "sr-only": local.hideLabel }}>
+            {label()}
+          </Kobalte.Label>
+        )}
       </Show>
       <Kobalte.Control data-slot="switch-control">
         <Kobalte.Thumb data-slot="switch-thumb" />

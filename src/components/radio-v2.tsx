@@ -21,12 +21,16 @@ export function RadioGroupV2(props: RadioGroupV2Props) {
       }}
     >
       <Show when={local.label}>
-        <Kobalte.Label data-slot="radio-v2-label" classList={{ "sr-only": local.hideLabel }}>
-          {local.label}
-        </Kobalte.Label>
+        {(label) => (
+          <Kobalte.Label data-slot="radio-v2-label" classList={{ "sr-only": local.hideLabel }}>
+            {label()}
+          </Kobalte.Label>
+        )}
       </Show>
       <Show when={local.description}>
-        <Kobalte.Description data-slot="radio-v2-description">{local.description}</Kobalte.Description>
+        {(description) => (
+          <Kobalte.Description data-slot="radio-v2-description">{description()}</Kobalte.Description>
+        )}
       </Show>
       <div data-slot="radio-v2-items">{local.children}</div>
       <Kobalte.ErrorMessage data-slot="radio-v2-error" />
@@ -61,7 +65,9 @@ export function RadioItemV2(props: RadioItemV2Props) {
         <div data-slot="radio-v2-item-text">
           <span data-slot="radio-v2-item-label-text">{local.label}</span>
           <Show when={local.description}>
-            <span data-slot="radio-v2-item-description">{local.description}</span>
+            {(description) => (
+              <span data-slot="radio-v2-item-description">{description()}</span>
+            )}
           </Show>
         </div>
       </Kobalte.ItemLabel>

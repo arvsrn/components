@@ -48,7 +48,7 @@ export function LineCommentV2(props: LineCommentV2Props) {
           <div data-slot="line-comment-v2-meta">{local.selection}</div>
         </div>
         <Show when={local.actions}>
-          <div data-slot="line-comment-v2-tools">{local.actions}</div>
+          {(actions) => <div data-slot="line-comment-v2-tools">{actions()}</div>}
         </Show>
       </div>
     </div>

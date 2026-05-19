@@ -138,7 +138,7 @@ export function BasicToolV2(props: BasicToolV2Props) {
                   </span>
                 </Show>
                 <Show when={!pending() && title().action}>
-                  {title().action}
+                  {(action) => action()}
                 </Show>
               </>
             )}

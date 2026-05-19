@@ -47,10 +47,10 @@ function ItemBody(
     <>
       <span data-slot="menu-v2-item-content">{props.children}</span>
       <Show when={props.shortcut}>
-        <span data-slot="menu-v2-item-shortcut">{props.shortcut}</span>
+        {(shortcut) => <span data-slot="menu-v2-item-shortcut">{shortcut()}</span>}
       </Show>
       <Show when={props.badge}>
-        <span data-slot="menu-v2-item-badge">{props.badge}</span>
+        {(badge) => <span data-slot="menu-v2-item-badge">{badge()}</span>}
       </Show>
       {props.trailing}
     </>

@@ -1,5 +1,5 @@
 import { Tabs as Kobalte } from "@kobalte/core/tabs"
-import { splitProps, type JSX } from "solid-js"
+import { Show, splitProps, type JSX } from "solid-js"
 import type { ComponentProps, ParentProps, Component } from "solid-js"
 import "./tabs-v2.css"
 
@@ -76,11 +76,13 @@ function TabsV2Trigger(props: ParentProps<TabsV2TriggerProps>) {
       >
         <span class="inline-flex items-center gap-2" data-slot="tabs-v2-trigger-content">
           {split.children}
-          {split.subtext && (
-            <span data-slot="tabs-v2-subtext" class="ml-2 text-xs text-text-weak">
-              {split.subtext}
-            </span>
-          )}
+          <Show when={split.subtext}>
+            {(subtext) => (
+              <span data-slot="tabs-v2-subtext" class="ml-2 text-xs text-text-weak">
+                {subtext()}
+              </span>
+            )}
+          </Show>
         </span>
       </Kobalte.Trigger>
     </div>
